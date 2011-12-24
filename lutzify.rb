@@ -1,5 +1,6 @@
+require 'rubygems'
 require 'sinatra'
 
 get "/" do
-  "Lutzify!"
+  haml :index, format: :html5
 end
