@@ -4,13 +4,18 @@ require 'sinatra'
 require 'haml'
 require 'sass'
 
-get "/" do
-
-  @host = "#{request.scheme}://#{request.host}"
+# Gets the correct hostname based on the request
+def host
+  host = "#{request.scheme}://#{request.host}"
   if request.port != 80
-    @host += ":#{request.port}"
+    host += ":#{request.port}"
   end
+  return host
+end
 
+
+get "/" do
+  @host = host
   haml :index, format: :html5
 end
 
@@ -30,12 +35,7 @@ get "/img" do
 end
 
 get "/js" do
-
-  @host = "#{request.scheme}://#{request.host}"
-  if request.port != 80
-    @host += ":#{request.port}"
-  end
-
+  @host = host
   content_type "application/javascript"
   erb :"lutzify.js"
 end
