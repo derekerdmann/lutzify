@@ -22,3 +22,8 @@ get "/img" do
     image.readlines
   end
 end
+
+get "/js" do
+  content_type "application/javascript"
+  File.open( "js/lutzify.js" ){ |f| f.readlines }
+end
