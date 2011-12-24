@@ -5,6 +5,12 @@ require 'haml'
 require 'sass'
 
 get "/" do
+
+  @host = "http://#{request.host}"
+  if request.port != 80
+    @host += ":#{request.port}"
+  end
+
   haml :index, format: :html5
 end
 
