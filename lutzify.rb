@@ -6,7 +6,7 @@ require 'sass'
 
 get "/" do
 
-  @host = "http://#{request.host}"
+  @host = "#{request.scheme}://#{request.host}"
   if request.port != 80
     @host += ":#{request.port}"
   end
@@ -30,5 +30,12 @@ get "/img" do
 end
 
 get "/js" do
-  coffee :lutzify
+
+  @host = "#{request.scheme}://#{request.host}"
+  if request.port != 80
+    @host += ":#{request.port}"
+  end
+
+  content_type "application/javascript"
+  erb :"lutzify.js"
 end
