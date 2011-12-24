@@ -1,0 +1,51 @@
+body {
+    text-align: center;
+    font-family: sans-serif;
+    background: #222;
+    color: #fff;
+}
+
+h1 {
+    font-size: 4em;
+}
+
+a {
+    padding: 0.5em 0.8em;
+    background: #ccc;
+    border-radius: 6px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+
+    color: #000;
+    text-decoration: none;
+
+    &:hover {
+        background: #aaa;
+    }
+}
+
+#tv {
+    position: absolute;
+    left: 20%; top: 20%;
+
+    @media screen and (max-width: 1130px) {
+       top: 60%;
+    }
+
+    @media screen and (max-width: 540px) {
+       display: none;
+    }
+}
+
+#size {
+    position: absolute;
+    right: 20%; top: 20%;
+
+    @media screen and (max-width: 1130px) {
+        top: 60%;
+    }
+
+    @media screen and (max-width: 540px) {
+        display: none;
+    }
+}
