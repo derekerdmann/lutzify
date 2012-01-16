@@ -1,2 +1,2 @@
-require './lutzify'
+require './chanelify'
 run Sinatra::Application

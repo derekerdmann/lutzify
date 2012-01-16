@@ -37,5 +37,5 @@ end
 get "/js" do
   @host = host
   content_type "application/javascript"
-  erb :"lutzify.js"
+  erb :"chanelify.js"
 end

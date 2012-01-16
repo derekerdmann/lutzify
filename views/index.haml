@@ -1,14 +1,18 @@
 !!! 5
 %html{ lang: "en" }
   %head
-    %title Lutzify!
+    %title Chanelify!
     %meta{ charset: "utf-8" }
     %link{ rel: "stylesheet", type: "text/css", href: "css" }
 
   %body
-    %h1 Lutzify!
+    %h1 Chanelify!
     %p If you're here, you probably already know what it does.
-
+      
+    %p
+      You may also be interested in 
+      %a{ href: "http://lutzify.heroku.com" } Lutzify!
+    
     %p Drag this bookmarklet to your bookmarks bar:
 
     - script = "javascript: (function () { " +              |
@@ -17,7 +21,7 @@
         "document.body.appendChild(jsCode); " +             |
         "lutz( document.images )}());"                      |
     
-    %a{ href: script } Lutzify!
+    %a{ href: script } Chanelify!
 
-    %img{ id: "tv", src: "/tv.png", alt: "Lutzify: As Seen on TV!" }
-    %img{ id: "size", src: "/size.png", alt: "Lutzify: Actual Size!" }
+    %img{ id: "tv", src: "/tv.png", alt: "Chanelify: As Seen on TV!" }
+    %img{ id: "size", src: "/size.png", alt: "Chanelify: Actual Size!" }
